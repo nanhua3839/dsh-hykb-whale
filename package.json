@@ -1,0 +1,42 @@
+{
+  "name": "dsh-hykb-whale",
+  "version": "0.1.0",
+  "description": "好游快爆 AI 小号：大号 @ 小号 → 小号自动回帖；读帖 + AI 总结。设置里有完整设置页 + 扫码登录 + 限流去重审计。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "hykb",
+    "3839",
+    "agent"
+  ],
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"tests/*.test.mjs\""
+  },
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "tools",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [],
+      "platform": "web"
+    }
+  },
+  "license": "MIT",
+  "dependencies": {
+    "qrcode": "1.5.4"
+  }
+}
